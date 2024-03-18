@@ -1,0 +1,116 @@
+<!-- Author: Dumar Ruge -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//css/profile.css">
+    <link rel="stylesheet" href="..//css/jquery-countryselector.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="..//js/profile.js"></script>
+    <script src="..//js/jquery.countrySelector.js"></script>
+    <title>Your Profile</title>
+</head>
+
+<body>
+    <div id="main-container" class="container">
+        <div id="img-container" class="child-content"></div>
+
+        <div class="form-container">
+            <div class="form-wrapper">
+                <div id="user-img">
+                    <img id="user-img"
+                        src="https://images.rawpixel.com/image_transparent_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3BmLWljb240LWppcjIwNjQtcG9yLWwtam9iNzg4LnBuZw.png"
+                        alt="User Image">
+                    <header>Your Profile</header>
+                </div>
+                <form id="myform">
+                    <div class="form">
+                        <div class="details personal">
+
+
+                            <span class="title">Personal Details</span>
+
+
+                            <div class="fields">
+                                <div class="input-box">
+                                    <label for="">Full Name</label>
+                                    <input type="text" placeholder="Full Name" required>
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Date of Birthay</label>
+                                    <input type="date" placeholder="Enter birth date">
+                                </div>
+                                <div class="input-box">
+                                    <label for="emailInput">Email</label>
+                                    <input id="emailInput" name="emailInput" type="text" placeholder="Email">
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Address</label>
+                                    <input type="text" placeholder="Enter your address" required>
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Mobile Phone</label>
+                                    <input type="text" placeholder="Enter mobile number" minlength="10">
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Gender</label>
+                                    <select id="gender" name="gender" id="">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="no">No Defined</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details ID">
+                            <span class="title">Bill Details</span>
+                            <div class="fields">
+                                <div class="input-box">
+                                    <label for="">Id Number</label>
+                                    <input type="text" placeholder="Enter ID number">
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Bill Address</label>
+                                    <input type="text" placeholder="Bill Address">
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Age</label>
+                                    <input type="number" placeholder="Age">
+                                </div>
+                                <div class="input-box" style="background-color: red;">
+                                    <label for="">Country</label>
+                                    <!--<input type="date" placeholder="Country"> -->
+                                    <select value="FRA" data-role="country-selector"></select>
+
+
+
+
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Province</label>
+                                    <input type="text" placeholder="Enter Province">
+                                </div>
+                                <div class="input-box">
+                                    <label for="">Postal Code</label>
+                                    <input type="text" placeholder="Postal Code">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="save-button"><button type="submit">Save</button></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
