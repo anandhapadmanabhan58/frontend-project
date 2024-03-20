@@ -2,10 +2,24 @@ $(document).ready(function () {
 
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
+    //Validate email pattern
     function isValidEmail(email) {
         return emailPattern.test(email);
     }
 
+    // Validate selector value
+    function isValidSelector(id, value, message) {
+        let selector = $(id).val();
+        if (selector == value) {
+            $(id).css('color', 'red');
+            alert(message)
+            $(id).click(function () {
+                $(this).css('color', 'black');
+            });
+        } else {
+            $("#country-selector").css('color', 'black');
+        }
+    }
     // From Submission handler
 
     $("#myform").submit(function (event) {
@@ -13,40 +27,32 @@ $(document).ready(function () {
 
         // Get the entered email address
         let email = $("#emailInput").val();
-        console.log(email)
 
-        // check if the email is valid
+
+        // Check if email is valid
         if (isValidEmail(email)) {
             alert('Email Valid');
-        } else {
-            alert('Email Invalid')
         }
+
+        // Valid Country selector
+        isValidSelector('#country-selector', 'SYC', 'Select a valid Country');
+        //Valid Gender Selector
+        isValidSelector('#gender', "", 'Select Gender');
+
+
+
     })
-
-
 
 
     // $("#myform").validate({
     //     rules: {
-    //         field: {
-    //             required: true
-    //         },
-    //         email: {
+
+    //         phone: {
     //             required: true,
-    //             email: true
-    //         },
-    //         number: {
-    //             required: true,
-    //             number: true
-    //         },
-    //         password: {
-    //             required: true,
-    //             minlength: 5
-    //         },
-    //         url: {
-    //             required: true,
-    //             url: true
+    //             number: true,
+    //             minlength: 10
     //         }
+
     //     }
     // });
 });
