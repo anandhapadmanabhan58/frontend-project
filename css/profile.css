@@ -22,7 +22,7 @@
 .container {
     display: grid;
     height: 100vh;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 40% auto;
 }
 
 .child-content {
@@ -42,7 +42,6 @@
 }
 
 .form-container {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +50,7 @@
 
 .form-wrapper {
     position: relative;
-    max-width: 1000px;
+    max-width: 800px;
     width: 100%;
     background-color: white;
     border-radius: 6px;
@@ -69,7 +68,6 @@
 
 .form-wrapper form {
     position: relative;
-    min-height: 500px;
 }
 
 
@@ -82,11 +80,11 @@
 }
 
 .form-wrapper form .title {
-    display: block;
+    display: flex;
     margin-bottom: 8px;
     font-size: 20px;
     font-weight: 500;
-    margin: 6px 0;
+
 }
 
 
@@ -174,4 +172,41 @@ form .fields .input-box {
 
 }
 
-@media screen and (max-width: 600px) {}
+@media screen and (max-width: 720px) {
+    .container {
+        grid-template-columns: 1fr;
+        /* Switch to one column when screen size is less than 580px */
+        grid-template-rows: auto;
+        /* Two rows */
+    }
+
+    #img-container {
+        display: none;
+    }
+
+    .form-wrapper form .fields {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    form .fields .input-box {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin: 4px 0;
+    }
+
+    .form-wrapper {
+        position: relative;
+        width: 90%;
+        background-color: white;
+        border-radius: 6px;
+        padding: 10px;
+        margin: 20px 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+}
