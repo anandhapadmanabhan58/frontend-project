@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../css/contact.css" />
+    <script src="../js/contact.js"></script>
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <div class="container" align="center">
+      <div class="about">
+        <h1>Have Any Questions?</h1>
+        <p id="p1">
+          For any inquiries, feel free to contact us through the form below
+        </p>
+      </div>
+      <div class="input">
+        <form action="" onsubmit="submitfn(event)">
+          <div class="top">
+            <input type="text" id="name" placeholder="Full Name" />
+            <input type="email" id="email" placeholder="Email Address" />
+          </div>
+          <div class="bottom">
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Messages"
+            ></textarea>
+          </div>
+          <input type="submit" id="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <div id="dialog">
+      <h3>Message Sent Successfully</h3>
+    </div>
+    <div id="mail">
+      <h3>Entered Email is not valid</h3>
+    </div>
+    <div id="field">
+      <h3>Input fields cannot be empty</h3>
+    </div>
+  </body>
+</html>
