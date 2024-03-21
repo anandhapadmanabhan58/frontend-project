@@ -8,6 +8,8 @@
 @font-face {
     font-family: "Garet";
     src: url(..//fonts/Spacetype\ -\ Garet\ Book.otf) format("otf");
+    font-family: "Kollektif";
+    src: url(..//fonts/Kollektif.ttf) format("ttf");
 }
 
 * {
@@ -24,7 +26,7 @@
 }
 
 .child-content {
-    display: grid;
+
     align-content: center;
     justify-content: center;
     margin: 0;
@@ -154,3 +156,22 @@ form .fields .input-box {
 #user-img img {
     height: 80px;
 }
+
+#save-button {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+
+}
+
+#save-button button {
+    border: 3px solid var(--myred);
+    width: 300px;
+    padding: 20px 0;
+    background-color: white;
+    font-family: "KolleKtif";
+    font-size: 1.5em;
+
+}
+
+@media screen and (max-width: 600px) {}
