@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "Garet";
+    src: url(..//fonts/Spacetype\ -\ Garet\ Book.otf) format("otf");
+    font-family: "Kollektif";
+    src: url(..//fonts/Kollektif.ttf) format("ttf");
+}
+
 body {
-  font-family: Arial, sans-serif;
   background-color: #f5f5f5;
 }
 
