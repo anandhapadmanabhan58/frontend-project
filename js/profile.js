@@ -25,13 +25,14 @@ $(document).ready(function () {
     $("#myform").submit(function (event) {
         event.preventDefault();
 
+
         // Get the entered email address
         let email = $("#emailInput").val();
 
 
         // Check if email is valid
-        if (isValidEmail(email)) {
-            alert('Email Valid');
+        if (!isValidEmail(email)) {
+            alert("Enter a valid email")
         }
 
         // Valid Country selector
@@ -44,15 +45,15 @@ $(document).ready(function () {
     })
 
 
-    // $("#myform").validate({
-    //     rules: {
+    $("#myform").validate({
+        rules: {
 
-    //         phone: {
-    //             required: true,
-    //             number: true,
-    //             minlength: 10
-    //         }
+            phone: {
+                required: true,
+                number: true,
+                minlength: 10
+            }
 
-    //     }
-    // });
+        }
+    });
 });

@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="..//js/profile.js"></script>
 
+    <link href="..//lib/jquery-ui-1.13.2.custom/jquery-ui.css" rel="stylesheet">
+
     <title>Your Profile</title>
 </head>
 
@@ -76,19 +78,28 @@
                                 </div>
                                 <div class="input-box">
                                     <label for="province">Province</label>
-                                    <input id="province" name="province" type="text" placeholder="Enter Province">
+                                    <input id="province" name="province" type="text" placeholder="Enter Province" ,
+                                        required>
                                 </div>
                                 <div class="input-box">
                                     <label for="postal-code">Postal Code</label>
-                                    <input id="postal-code" name="postal-code" type="text" placeholder="Postal Code">
+                                    <input id="postal-code" name="postal-code" type="text" placeholder="Postal Code"
+                                        required>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <div id="save-button"><button type="submit">Save</button></div>
+
                     <!-- Script for JQuery CountrySelector -->
                     <script src="..//js/jquery.countrySelector.js"></script>
+
+                    <div id="save-button"><button id="button">Upload</button></div>
+                    <script src="..//lib/jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script>
+                    <script src="..//lib/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+                    <script>
+                        $("#button").button();
+                    </script>
                 </form>
             </div>
 

@@ -162,15 +162,6 @@ form .fields .input-box {
 
 }
 
-#save-button button {
-    border: 3px solid var(--myred);
-    width: 300px;
-    padding: 20px 0;
-    background-color: white;
-    font-family: "KolleKtif";
-    font-size: 1.5em;
-
-}
 
 @media screen and (max-width: 720px) {
     .container {
