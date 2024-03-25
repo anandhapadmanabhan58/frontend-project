@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail Page</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="lib/jquery-ui.css" rel="stylesheet">
+</head>
+ 
+<body>
+  <div class="container">
+    <!--<div class="title">Product Detail</div>-->
+    <div class="content">
+        <div class="image">
+            <img src="" alt="">
+        </div>
+        <div class="detail">
+            <h1 class="product_name"></h1>
+            <div class="price"></div>
+            <div class="inStock"></div>
+            <div>
+              <label>Quantity: </label>
+              <input input="text" class="quantity" id="quantity" value="1"></input>
+            </div>
+            <div class="description"></div>
+            <button id="button" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+  <div class="title">Similar product</div>
+  <div class="listProduct"></div>
+  <script>
+    // Get the Product Details from products.json
+    let products = null;
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        products = data;
+        showDetail();
+    })
+
+    function showDetail(){
+        let detail = document.querySelector('.content');
+        let listProduct = document.querySelector('.listProduct');
+        let productCode =  new URLSearchParams(window.location.search).get('code');
+        let thisProduct = products.filter(value => value.code == productCode)[0];
+        console.log(thisProduct.name + " " + thisProduct.quantity);
+        //if there is no product with id = productId => return to home page
+        /*
+        if(!thisProduct){
+            window.location.href = "/";
+        }
+        */
+        detail.querySelector('.image img').src = thisProduct.image;
+        detail.querySelector('.product_name').innerText = thisProduct.name;
+        detail.querySelector('.price').innerText = '$' + thisProduct.price;
+
+        var tempQuantity = localStorage.getItem(productCode);
+        detail.querySelector('.inStock').innerText = 'In Stock: ' + tempQuantity;
+        detail.querySelector('.description').innerText = 'Product Info \n\n' + thisProduct.description;
+
+        /*
+        (products.filter(value => value.id != productCode)).forEach(product => {
+            let newProduct = document.createElement('a');
+            newProduct.href = '/detail.html?code=' + product.code;
+            newProduct.classList.add('item');
+            newProduct.innerHTML = 
+            `<img src="${product.image}" alt="">
+            <h2>${product.name}</h2>
+            <div class="price">$${product.price}</div>`;
+            listProduct.appendChild(newProduct);
+        });
+        */
+    }
+
+    function addToCart(){
+          let productCode =  new URLSearchParams(window.location.search).get('code');
+          console.log("Hello " + productCode);
+          //var tempQuantity = JSON.parse(localStorage.getItem(productCode));
+          var tempQuantity = localStorage.getItem(productCode);
+          console.log("tempQuantity " + tempQuantity);
+          /*
+          localStorage.setItem(productCode, JSON.stringify(tempQuantity - 1));
+          tempQuantity = JSON.parse(localStorage.getItem(productCode));
+          */
+          let updatedQuantity = document.getElementById("quantity");
+          updatedQuantity.value = tempQuantity;
+        };
+  </script>
+  <script src="jquery-ui.js"></script>
+</body>
+
+</html>

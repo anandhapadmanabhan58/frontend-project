@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalogue Page</title>
+  <link rel="stylesheet" href="css/products.css">
+  <link href="lib/jquery-ui.css" rel="stylesheet">
+</head>
+ 
+<body>
+  <div class="container">
+    <div class="title">Chairs</div>
+    <button id="button" onclick="console.log('Hellerski')">Add to Cart</button>
+    <div class="productList">
+      <!--
+      <a href="productdetail.html?code=chair01" class="item">
+        <img src="img/Chair01.jpg" alt="">
+        <h2>Chair 01</h2>
+        <div class="price"></div>
+      </a>
+      <a>
+        <img src="img/Chair01.jpg" alt="">
+        <h2>Chair 01</h2>
+        <div class="price"></div>
+      </a>
+      <a>
+        <img src="img/Chair01.jpg" alt="">
+        <h2>Chair 01</h2>
+        <div class="price"></div>
+      </a>
+    -->
+    </div>
+  </div>
+  <script>
+    
+    // get the product details from the json
+    let products = null;
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+      products = data;
+      console.log(products);
+      addDataToHTML();
+    })
+    
+    function addDataToHTML(){
+      let productList = document.querySelector('.productList');
+      //if(products != null) {
+        products.forEach(product => {
+          // Saving Quantity in a local storage
+          console.log(product.name + " " + product.quantity);
+          localStorage.setItem(product.name, JSON.stringify(product.quantity));
+          var tempQuantity = localStorage.getItem(product.name);
+          console.log("Quantity: " + tempQuantity);
+          
+          let newProduct = document.createElement('a');
+          newProduct.href = 'productdetail.html?code=' + product.code
+          newProduct.classList.add('item');
+          newProduct.innerHTML = `
+            <img src="${product.image}" alt="">
+            <h2>${product.name}</h2>
+            <div class="price">$${product.price}</div>
+            <div class="quantity">${product.quantity}</div>`;
+            productList.appendChild(newProduct);
+        });
+    }
+    
+  </script>
+  <script src="jquery-ui.js"></script>
+  <script>
+  $( "#accordion" ).accordion();
+  
+  var availableTags = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lisp",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme"
+  ];
+  $( "#autocomplete" ).autocomplete({
+    source: availableTags
+  });
+  
+  $( "#button" ).button();
+  $( "#button-icon" ).button({
+    icon: "ui-icon-gear",
+    showLabel: false
+  });
+  
+  $( "#radioset" ).buttonset();
+  
+  $( "#controlgroup" ).controlgroup();
+  
+  $( "#tabs" ).tabs();
+  
+  $( "#dialog" ).dialog({
+    autoOpen: false,
+    width: 400,
+    buttons: [
+      {
+        text: "Ok",
+        click: function() {
+          $( this ).dialog( "close" );
+        }
+      },
+      {
+        text: "Cancel",
+        click: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    ]
+  });
+  
+  // Link to open the dialog
+  $( "#dialog-link" ).click(function( event ) {
+    $( "#dialog" ).dialog( "open" );
+    event.preventDefault();
+  });
+  
+  $( "#datepicker" ).datepicker({
+    inline: true
+  });
+  
+  $( "#slider" ).slider({
+    range: true,
+    values: [ 17, 67 ]
+  });
+  
+  $( "#progressbar" ).progressbar({
+    value: 20
+  });
+  
+  $( "#spinner" ).spinner();
+  
+  $( "#menu" ).menu();
+  
+  $( "#tooltip" ).tooltip();
+  
+  $( "#selectmenu" ).selectmenu();
+  
+  // Hover states on the static widgets
+  $( "#dialog-link, #icons li" ).hover(
+    function() {
+      $( this ).addClass( "ui-state-hover" );
+    },
+    function() {
+      $( this ).removeClass( "ui-state-hover" );
+    }
+  );
+  </script>
+</body>
+
+</html>
