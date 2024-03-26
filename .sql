@@ -1,4 +1,4 @@
-CREATE project;
+CREATE DATABASE project;
 
 USE project;
 
@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
     lastname VARCHAR(255),
     email VARCHAR(255),
     password VARCHAR(255),
-    date TIMESTAMP DEFAULT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     address VARCHAR(255) DEFAULT NULL,
     phone_number VARCHAR(20) DEFAULT NULL,
     country VARCHAR(255) DEFAULT NULL,
