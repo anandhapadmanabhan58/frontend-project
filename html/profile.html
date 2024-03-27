@@ -1,4 +1,6 @@
 <!-- Author: Dumar Ruge -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..//css/profile.css">
     <link href="..//css/jquery-countryselector.min.css" rel="stylesheet"> <!-- JQuery CountrySelector CSS -->
+    <link href="..//lib/jquery-ui.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script src="..//js/profile.js"></script>
-
     <title>Your Profile</title>
 </head>
 
@@ -27,7 +30,7 @@
                         alt="User Image">
                     <header>Your Profile</header>
                 </div>
-                <form id="myform">
+                <form id="myform" action="">
                     <div class="form">
                         <div class="details personal">
 
@@ -37,8 +40,13 @@
 
                             <div class="fields">
                                 <div class="input-box">
-                                    <label for="full-name">Full Name</label>
-                                    <input id="full-name" name="full-name" type="text" placeholder="Full Name" required>
+                                    <label for="full-name">First Name</label>
+                                    <input id="first-name" name="first-name" type="text" placeholder="First Name"
+                                        required>
+                                </div>
+                                <div class="input-box">
+                                    <label for="last-name">Last Name</label>
+                                    <input id="last-name" name="last-name" type="text" placeholder="Last Name" required>
                                 </div>
                                 <div class="input-box">
                                     <label for="birthday">Date of Birthay</label>
@@ -57,6 +65,19 @@
                                     <label for="phone">Mobile Phone</label>
                                     <input type="text" id="phone" name="phone" placeholder="Enter mobile number">
                                 </div>
+                                <script>
+                                    $("#myform").validate({
+                                        rules: {
+
+                                            phone: {
+                                                required: true,
+                                                number: true,
+                                                minlength: 10
+                                            }
+
+                                        }
+                                    });
+                                </script>
                                 <div class="input-box">
                                     <label for="gender">Gender</label>
                                     <select id="gender" name="gender" id="">
@@ -76,19 +97,30 @@
                                 </div>
                                 <div class="input-box">
                                     <label for="province">Province</label>
-                                    <input id="province" name="province" type="text" placeholder="Enter Province">
+                                    <input id="province" name="province" type="text" placeholder="Enter Province" ,
+                                        required>
                                 </div>
                                 <div class="input-box">
                                     <label for="postal-code">Postal Code</label>
-                                    <input id="postal-code" name="postal-code" type="text" placeholder="Postal Code">
+                                    <input id="postal-code" name="postal-code" type="text" placeholder="Postal Code"
+                                        required>
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <div id="save-button"><button type="submit">Save</button></div>
+
                     <!-- Script for JQuery CountrySelector -->
                     <script src="..//js/jquery.countrySelector.js"></script>
+
+                    <div id="save-button"><button id="button">Upload</button></div>
+                    <script src="..//lib/jquery.js"></script>
+                    <script src="..//lib/jquery-ui.js"></script>
+                    <script>
+                        $("#button").button();
+                    </script>
+
+
                 </form>
             </div>
 

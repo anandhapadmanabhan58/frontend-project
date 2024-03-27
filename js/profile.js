@@ -1,4 +1,8 @@
+
+
 $(document).ready(function () {
+
+
 
     var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
@@ -20,7 +24,7 @@ $(document).ready(function () {
             $("#country-selector").css('color', 'black');
         }
     }
-    // From Submission handler
+    // Form Submission handler
 
     $("#myform").submit(function (event) {
         event.preventDefault();
@@ -30,8 +34,8 @@ $(document).ready(function () {
 
 
         // Check if email is valid
-        if (isValidEmail(email)) {
-            alert('Email Valid');
+        if (!isValidEmail(email)) {
+            alert('Email a valid email');
         }
 
         // Valid Country selector
@@ -41,18 +45,12 @@ $(document).ready(function () {
 
 
 
-    })
+
+    });
 
 
-    // $("#myform").validate({
-    //     rules: {
 
-    //         phone: {
-    //             required: true,
-    //             number: true,
-    //             minlength: 10
-    //         }
 
-    //     }
-    // });
 });
+
+
