@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'Garet';
+    src: url(..//fonts/Spacetype\ -\ Garet\ Book.otf) format("otf"),
+         url(..//fonts/Spacetype\ -\ Garet\ Heavy.otf) format("otf");
+}
+
+@font-face {
+    font-family: 'Kollektif';
+    src: url('fonts/kollektif-bold.ttf') format("ttf"),
+         url('fonts/kollektif-bolditalic.ttf') format("ttf"),
+         url('fonts/kollektif-italic.ttf') format("ttf"),
+         url('fonts/kollektif.ttf') format("ttf");
+}
+
+/* Header */
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    color: #DB4A2B;
+}
+.logo {
+    font-size: 1.5em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+  
+.menu a {
+    color: #DB4A2B;
+    text-decoration: none;
+}
+
+* {
+    font-family: "Kollektif";
+}
+body {
+    margin: 0;
+}
+a {
+    color: unset;
+    text-decoration: none;
+}
+.container {
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+}
+.title {
+    font-size: xx-large;
+    padding: 20px 0;
+    font-family: "Garet";
+}
+.productList .item img{
+    width: 90%;
+    /*filter: drop-shadow(0 50px 20px #0009);*/
+}
+.productList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.productList .item{
+    background-color: #eeeee6;
+    padding: 20px;
+    border-radius: 20px;
+}
+.productList .item h2{
+    font-size: large;
+    font-weight: 500;
+}
+.productList .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+
+/* detail page */
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    text-align: left;
+}
+.content .image img{
+    width: 100%;
+}
+.content .image{
+    position: relative;
+}
+
+.content .product_name{
+    font-size: xx-large;
+    padding: 40px 0 0 0;
+    margin: 0 0 10px 0;
+    font-family: "Kollektif";
+    color: #DB4A2B;
+}
+.content .price{
+    font-size: x-large;
+    margin-bottom: 20px;
+    font-family: "Kollektif";
+    color: #DB4A2B;
+}
+.content .instock{
+    font-size: x-large;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    font-family: "Kollektif";
+}
+.content .quantity{
+    font-size: x-large;
+    margin-bottom: 20px;
+    font-family: "Kollektif";
+}
+
+.content .description{
+    font-weight: 300;
+    font-family: "Garet";
+}
+
+/****** Media queries for Tablets ******/
+@media screen and (min-width: 481px) and (max-width: 789px) {
+    .productList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/****** Media queries for Mobile devices ******/
+@media screen and (max-width: 480px) {
+    .productList {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
