@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["email"] = $email;
       
       // Redirect the user to a secure page
-      header("location: ../html/profile.html");
+      header("location: ../html/profile.php");
     } else {
       // Password is incorrect, so show an error message
       echo "Invalid password";

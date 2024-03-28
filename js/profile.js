@@ -8,6 +8,7 @@ $(document).ready(function () {
 
     //Validate email pattern
     function isValidEmail(email) {
+
         return emailPattern.test(email);
     }
 
@@ -35,7 +36,7 @@ $(document).ready(function () {
 
         // Check if email is valid
         if (!isValidEmail(email)) {
-            alert('Email a valid email');
+            alert('Enter a valid email');
         }
 
         // Valid Country selector
@@ -48,7 +49,7 @@ $(document).ready(function () {
 
     });
 
-
+    $("#myform").submit();
 
 
 });
